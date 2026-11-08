@@ -1,5 +1,5 @@
 Student name: Daan Ulijn 
 Student number: 764347
 Student class: INF1B
-GitHub Repository: your github repository URL
-GitHub Pages URL: your github pages URL
+GitHub Repository: https://github.com/764347-Daan/SuzukiSwiftSportWebsiteWebmarkup
+GitHub Pages URL: https://764347-daan.github.io/SuzukiSwiftSportWebsiteWebmarkup/
