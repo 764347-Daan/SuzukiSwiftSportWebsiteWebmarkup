@@ -1,0 +1,1717 @@
+
+/* =========================================
+   SWIFT SPORT CAR TUNING
+   Complete stylesheet for all six pages
+   ========================================= */
+
+/* 1. GOOGLE FONTS AND COLOURS */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --grey: #4D4D4D;
+    --dark: #2D2D2D;
+    --black: #171717;
+    --red: #AE3333;
+    --bright-red: #FF0000;
+    --white: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--grey);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+a:visited {
+    color: #E3B6B6;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Orbitron', sans-serif;
+}
+
+a:hover {
+    color: var(--bright-red);
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--bright-red);
+    outline-offset: 3px;
+}
+
+/* 2. SHARED HEADER */
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    min-height: 6.5rem;
+    padding: 1rem 3rem;
+    background-color: var(--dark);
+    border-bottom: 2px solid var(--red);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.logo-placeholder {
+    display: block;
+    width: 4.2rem;
+    height: 4.2rem;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.05;
+    text-shadow: 0 0 5px var(--red);
+}
+
+.brand-name span {
+    display: block;
+    font-size: 1.1rem;
+}
+
+.main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mobile-nav-label {
+    display: none;
+}
+
+.main-nav a {
+    display: inline-block;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--red);
+    color: var(--white);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a:active {
+    color: var(--bright-red);
+}
+
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+    color: var(--bright-red);
+    border-bottom-color: var(--bright-red);
+}
+
+/* Native details/summary keeps the cookie notice usable without scripts. */
+
+.cookie-notice {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 9999;
+    width: 30rem;
+    max-width: calc(100vw - 2rem);
+    padding: 1rem;
+    background-color: var(--dark);
+    border-color: var(--red);
+    border-style: double;
+    border-width: 3px;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.6);
+}
+
+.cookie-notice summary {
+    color: var(--white);
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.cookie-notice p {
+    margin: 0.5rem 0 0;
+    font-size: 0.8rem;
+}
+
+/* 3. SHARED HERO
+   Used on every page */
+
+.unified-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    align-items: center;
+    width: 100%;
+    height: 19rem;
+    padding: 0 2.5rem;
+    overflow: hidden;
+    background: linear-gradient(
+        110deg,
+        #777777 0%,
+        #505050 45%,
+        #252525 100%
+    );
+    border-bottom: 3px solid var(--red);
+}
+
+/* Geometric background on the right */
+
+.unified-hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -5%;
+    width: 65%;
+    height: 85%;
+    background:
+        repeating-linear-gradient(
+            60deg,
+            transparent 0 28px,
+            #343434 29px 31px
+        ),
+        repeating-linear-gradient(
+            120deg,
+            transparent 0 28px,
+            #343434 29px 31px
+        ),
+        var(--black);
+    border-left: 4px solid var(--red);
+    border-bottom: 4px solid var(--red);
+    box-shadow: 0 0 12px var(--red);
+    transform: skew(-16deg);
+}
+
+/* Text and pictures sit in front */
+
+.unified-hero > article,
+.unified-hero > figure {
+    position: relative;
+    z-index: 1;
+}
+
+.unified-hero > article:first-child {
+    max-width: 23rem;
+}
+
+.unified-hero > article:first-child h1 {
+    margin-bottom: 0.7rem;
+    color: var(--white);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    line-height: 1.1;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.unified-hero > article:first-child h1 span {
+    display: block;
+    color: var(--white);
+    font-size: 0.55em;
+}
+
+.unified-hero > article:first-child h1 strong,
+.unified-hero .hero-highlight {
+    display: block;
+    color: var(--bright-red);
+    font-size: 1.5em;
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+.unified-hero > article:first-child p {
+    max-width: 18rem;
+    margin: 0.6rem 0;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.unified-hero > figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.unified-hero > figure img {
+    display: block;
+    width: 100%;
+    height: 16.5rem;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 12px #171717);
+}
+
+.unified-hero > figure figcaption {
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+/* 4. SHARED LARGE PAGE TITLES */
+
+.unified-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8rem;
+    padding: 0 1rem;
+    overflow: hidden;
+    background: linear-gradient(
+        #505050,
+        var(--dark)
+    );
+    border-bottom: 1rem solid var(--white);
+}
+
+.unified-title h2 {
+    margin: 0;
+    color: var(--white);
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2rem, 7vw, 6rem);
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    text-shadow:
+        2px 2px 0 var(--red),
+        0 0 8px var(--red);
+}
+
+/* Engine and Contact have red title lettering */
+
+.engine-title h2,
+.contact-main-title h2 {
+    color: var(--bright-red);
+    text-shadow: 0 0 12px var(--red);
+}
+
+/* 5. SHARED CONTENT STYLES */
+
+.rules-content,
+.interior-content,
+.contact-content {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+.exterior-section,
+.engine-section {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+.rules-label,
+.interior-eyebrow,
+.exterior-number,
+.engine-number,
+.contact-section-label,
+.jdm-number {
+    color: var(--bright-red);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+}
+
+.rules-content h2,
+.interior-content h2,
+.exterior-section h2,
+.engine-section h2 {
+    margin-bottom: 1.2rem;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.rules-content h2 span,
+.exterior-heading span,
+.engine-section h2 span,
+.engine-final h2 span {
+    display: block;
+    margin-top: 0.4rem;
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.55em;
+    font-weight: 700;
+}
+
+.rules-content p,
+.interior-content p,
+.exterior-section p,
+.engine-section p,
+.contact-content p {
+    line-height: 1.65;
+}
+
+/* 6. HOME PAGE */
+
+/* Home hero button */
+
+.hero-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background-color: var(--red);
+    border-radius: 4px;
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.hero-button:hover {
+    background-color: var(--bright-red);
+    color: var(--white);
+}
+
+/* Model specs section */
+
+.home-intro {
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+.home-intro > h2 {
+    margin: 0;
+    padding: 0.6rem 0;
+    overflow: hidden;
+    background-color: var(--dark);
+    border-bottom: 1rem solid var(--white);
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2.2rem, 8vw, 7rem);
+    line-height: 1.1;
+    white-space: nowrap;
+    text-shadow: 2px 2px 0 var(--red);
+}
+
+.home-intro > h3 {
+    width: 90%;
+    max-width: 950px;
+    margin: 2rem auto 3rem;
+    padding: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    text-align: center;
+    text-shadow: 0 0 8px var(--white);
+}
+
+.specs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 85%;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.spec-card {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    min-height: 13rem;
+    overflow: hidden;
+    background-color: var(--dark);
+    border-radius: 2rem;
+    text-align: left;
+}
+
+.spec-card img {
+    display: block;
+    width: 100%;
+    height: 13rem;
+    object-fit: contain;
+}
+
+.spec-text {
+    padding: 1.5rem;
+}
+
+.spec-text h3 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 0 var(--red);
+}
+
+.spec-text p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+/* JDM culture */
+
+.jdm-section {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 2rem 0 4rem;
+}
+
+.jdm-section > h2 {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    text-align: center;
+    border-top: 3px solid var(--red);
+}
+
+.jdm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.jdm-card {
+    padding: 2rem;
+    background-color: var(--dark);
+    border: 1px solid var(--red);
+    border-radius: 1rem;
+}
+
+.jdm-card.wide-card {
+    grid-column: 1 / 3;
+}
+
+.jdm-card h3 {
+    font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+}
+
+.jdm-card p {
+    font-size: 0.9rem;
+}
+
+/* Home ending */
+
+.home-end {
+    padding: 3rem 5%;
+    background-color: var(--dark);
+}
+
+.home-end h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+}
+
+.home-end > p {
+    max-width: 45rem;
+}
+
+.home-end-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.home-end-nav a {
+    display: inline-block;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--red);
+    border: 1px solid var(--red);
+    border-radius: 4px;
+    color: var(--white);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.home-end-nav a:hover {
+    background-color: var(--bright-red);
+}
+
+/* 7. RULES PAGE */
+
+.rules-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.rules-introduction > p,
+.rules-requirements > p,
+.rules-checklist > p,
+.rules-questions > p {
+    max-width: 850px;
+}
+
+.rules-introduction > p:nth-of-type(2) {
+    text-indent: 1em;
+    word-spacing: 0.03em;
+}
+
+.rules-introduction > p:nth-of-type(2)::first-letter {
+    float: left;
+    margin: 0.1em 0.1em 0 0;
+    color: var(--bright-red);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8em;
+    font-weight: 800;
+    line-height: 0.8;
+}
+
+.rules-important,
+.exterior-reminder,
+.exterior-final-reminder {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--dark);
+    border-left: 4px solid var(--bright-red);
+    border-radius: 0.5rem;
+}
+
+.rules-important h3,
+.exterior-reminder h3,
+.exterior-final-reminder h3 {
+    color: var(--bright-red);
+}
+
+.rules-important p,
+.exterior-reminder p,
+.exterior-final-reminder p {
+    margin-bottom: 0;
+}
+
+.rules-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.rules-card {
+    padding: 1.8rem;
+    background-color: var(--dark);
+    border: 1px solid var(--red);
+    border-radius: 1rem;
+}
+
+.rules-card h4 {
+    font-size: 1.3rem;
+}
+
+.rules-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Alternating row colours keep the technical specifications easy to scan. */
+
+.engine-table-section {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 2rem 0 3rem;
+}
+
+.engine-spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--black);
+}
+
+.engine-spec-table caption {
+    margin-bottom: 0.75rem;
+    color: var(--white);
+    font-weight: 700;
+    text-align: left;
+}
+
+.engine-spec-table th,
+.engine-spec-table td {
+    padding: 0.8rem 1rem;
+    border: 1px solid #777777;
+    text-align: left;
+}
+
+.engine-spec-table thead tr {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.engine-spec-table tbody tr:nth-child(even) {
+    background-color: #CFF;
+}
+
+.engine-spec-table tbody tr:nth-child(odd) {
+    background-color: #FFF;
+}
+
+/* Checklist */
+
+.rules-checklist ol {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0 0;
+    padding-left: 2rem;
+}
+
+.rules-checklist li {
+    padding: 1rem;
+    background-color: var(--dark);
+    border-left: 3px solid var(--red);
+}
+
+.rules-checklist li strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+.rules-checklist li span {
+    display: block;
+    font-size: 0.9rem;
+}
+
+/* Questions */
+
+.rules-answer {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background-color: var(--dark);
+    border-radius: 0.8rem;
+}
+
+.rules-answer h4 {
+    color: var(--white);
+}
+
+.rules-answer p {
+    margin-bottom: 0;
+}
+
+/* Official links */
+
+.rules-official {
+    padding: 3rem 5%;
+    background-color: var(--dark);
+    text-align: center;
+}
+
+.rules-official a {
+    color: var(--white);
+}
+
+.rules-next-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--red);
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* 8. INTERIOR PAGE */
+
+.interior-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.interior-foundation {
+    max-width: 900px;
+}
+
+.interior-feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.interior-feature-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 18rem;
+    margin: 0;
+    padding: 1rem;
+    background-color: var(--dark);
+    border-radius: 1rem;
+}
+
+.interior-feature-image img {
+    width: 100%;
+    height: 18rem;
+    object-fit: contain;
+}
+
+.interior-feature-image figcaption,
+.interior-lighting-card figcaption {
+    color: #CCCCCC;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.interior-feature-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    background-color: var(--dark);
+    border-left: 3px solid var(--red);
+    border-radius: 1rem;
+}
+
+.interior-feature-text h2 {
+    font-size: 1.7rem;
+}
+
+.interior-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.interior-detail-card {
+    padding: 2rem;
+    background-color: var(--dark);
+    border: 1px solid var(--red);
+    border-radius: 1rem;
+}
+
+.interior-detail-card h3 {
+    font-size: 1.3rem;
+}
+
+.interior-lighting-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--dark);
+    border-radius: 1rem;
+}
+
+.interior-lighting-card figure {
+    margin: 0;
+}
+
+.interior-lighting-card img {
+    width: 100%;
+    height: 17rem;
+    object-fit: contain;
+}
+
+.interior-final-card {
+    padding: 2rem;
+    background-color: var(--dark);
+    border-left: 4px solid var(--bright-red);
+    border-radius: 1rem;
+}
+
+.interior-next {
+    padding: 3rem 5%;
+    background-color: var(--dark);
+    text-align: center;
+}
+
+.interior-next a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--red);
+    border-radius: 4px;
+    color: var(--white);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* 9. EXTERIOR PAGE */
+
+.exterior-section {
+    border-bottom: 1px solid #777777;
+}
+
+.exterior-heading {
+    margin-bottom: 1.5rem;
+}
+
+.exterior-description {
+    max-width: 900px;
+}
+
+.exterior-upgrades {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.exterior-upgrade-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background-color: var(--dark);
+    border: 1px solid var(--red);
+    border-radius: 1rem;
+}
+
+.exterior-upgrade-card h3 {
+    font-size: 1.4rem;
+}
+
+.exterior-upgrade-card figure {
+    margin: auto 0 0;
+    padding-top: 1rem;
+}
+
+.exterior-upgrade-card img {
+    display: block;
+    width: 100%;
+    height: 12rem;
+    object-fit: contain;
+}
+
+.exterior-upgrade-card figcaption,
+.exterior-detail-card figcaption {
+    color: #CCCCCC;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.exterior-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.exterior-detail-card {
+    padding: 1.5rem;
+    background-color: var(--dark);
+    border-radius: 1rem;
+}
+
+.exterior-detail-card figure {
+    margin: 0 0 1.5rem;
+}
+
+.exterior-detail-card img {
+    display: block;
+    width: 100%;
+    height: 15rem;
+    object-fit: contain;
+}
+
+.exterior-detail-card h3 {
+    font-size: 1.4rem;
+}
+
+.exterior-next {
+    padding: 3rem 5%;
+    background-color: var(--dark);
+    text-align: center;
+}
+
+.exterior-next-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--red);
+    border-radius: 4px;
+    color: var(--white);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* 10. ENGINE PAGE */
+
+.engine-section {
+    border-bottom: 1px solid #777777;
+}
+
+.engine-description {
+    max-width: 900px;
+}
+
+.engine-specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.engine-specs article {
+    padding: 2rem 1rem;
+    background-color: var(--dark);
+    border: 1px solid var(--red);
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.engine-specs h3 {
+    margin-bottom: 0.5rem;
+    color: var(--bright-red);
+    font-size: 2rem;
+}
+
+.engine-specs p {
+    margin-bottom: 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* Engine airflow */
+
+.engine-airflow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.airflow-card {
+    position: relative;
+    min-height: 16rem;
+    padding: 1.5rem;
+    background-color: var(--dark);
+    border: 1px solid var(--red);
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.airflow-number {
+    color: var(--bright-red);
+    font-weight: 800;
+}
+
+.airflow-card h3 {
+    font-size: 1rem;
+}
+
+.airflow-card p {
+    font-size: 0.8rem;
+}
+
+.airflow-circle {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem auto 0;
+    background-color: var(--red);
+    border: 3px solid var(--bright-red);
+    border-radius: 50%;
+}
+
+/* Engine tuning cards */
+
+.engine-tuning-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.engine-tuning-card {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    gap: 0;
+    overflow: hidden;
+    background-color: var(--dark);
+    border-radius: 1rem;
+}
+
+.engine-tuning-card.reverse {
+    grid-template-columns: 60% 40%;
+}
+
+.engine-tuning-card.reverse figure {
+    order: 2;
+}
+
+.engine-tuning-card figure {
+    margin: 0;
+    padding: 1rem;
+}
+
+.engine-tuning-card img {
+    display: block;
+    width: 100%;
+    height: 15rem;
+    object-fit: contain;
+}
+
+.engine-tuning-card figcaption {
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.engine-tuning-card > section {
+    padding: 2rem;
+}
+
+.engine-tuning-card h3 {
+    font-size: 1.4rem;
+}
+
+.engine-final {
+    padding: 3rem 5%;
+    background-color: var(--dark);
+    text-align: center;
+}
+
+.engine-final > p {
+    max-width: 850px;
+    margin: 0 auto 1.5rem;
+}
+
+.engine-next-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--red);
+    border-radius: 4px;
+    color: var(--white);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* 11. CONTACT PAGE */
+
+/* Special three-column hero */
+
+.contact-hero.unified-hero {
+    grid-template-columns: 30% 40% 30%;
+    padding: 0 1.5rem;
+}
+
+.contact-hero.unified-hero::after {
+    right: 20%;
+    width: 55%;
+}
+
+.contact-hero-right {
+    max-width: 17rem;
+    justify-self: end;
+    text-align: right;
+}
+
+.contact-hero-right h2 {
+    margin: 0.5rem 0;
+    color: var(--bright-red);
+    font-size: 1.4rem;
+}
+
+.contact-hero-right p {
+    font-size: 0.85rem;
+}
+
+/* Contact content */
+
+.contact-content > h2 {
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+}
+
+.contact-content > .contact-section-label {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr);
+    gap: 1.5rem;
+}
+
+.contact-form-card,
+.contact-info-card,
+.contact-explore-card,
+.contact-bottom-card {
+    padding: 2rem;
+    background-color: var(--dark);
+    border: 1px solid var(--red);
+    border-radius: 1rem;
+}
+
+.contact-form-card h3,
+.contact-sidebar h3 {
+    font-size: 1.4rem;
+}
+
+.contact-form-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 2rem;
+}
+
+.contact-form-card label,
+.contact-form-card legend {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.contact-form-card input[type="text"],
+.contact-form-card input[type="email"],
+.contact-form-card input[type="tel"],
+.contact-form-card textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.85rem;
+    background-color: #444444;
+    border: 1px solid #888888;
+    border-radius: 4px;
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+}
+
+.contact-form-card input::placeholder,
+.contact-form-card textarea::placeholder {
+    color: #CCCCCC;
+}
+
+.contact-form-card textarea {
+    resize: vertical;
+}
+
+.contact-salutation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0 0 1rem;
+    padding: 1rem;
+    border: 1px solid #888888;
+    border-radius: 4px;
+}
+
+.contact-salutation legend {
+    padding: 0 0.5rem;
+}
+
+.contact-salutation label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.contact-privacy,
+.contact-next-steps {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background-color: #3B3B3B;
+    border-left: 3px solid var(--red);
+    border-radius: 0.5rem;
+}
+
+.contact-privacy h4,
+.contact-next-steps h4 {
+    font-size: 0.95rem;
+}
+
+.contact-privacy p,
+.contact-next-steps p,
+.contact-next-steps li {
+    font-size: 0.8rem;
+}
+
+.contact-next-steps ol {
+    padding-left: 1.2rem;
+}
+
+.contact-submit {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--red);
+    border: 0;
+    border-radius: 4px;
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.contact-submit:hover {
+    background-color: var(--bright-red);
+}
+
+.contact-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-info-note {
+    color: #CCCCCC;
+    font-size: 0.8rem;
+}
+
+.contact-explore-card nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.contact-explore-card nav li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #666666;
+}
+
+.contact-explore-card nav a {
+    display: block;
+    color: var(--white);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.contact-explore-card nav a:hover {
+    color: var(--bright-red);
+}
+
+.contact-explore-card nav span {
+    display: block;
+    margin-top: 0.25rem;
+    color: #CCCCCC;
+    font-size: 0.8rem;
+}
+
+.contact-bottom-card {
+    margin-top: 2rem;
+}
+
+.contact-footer a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.contact-footer a:hover {
+    color: var(--bright-red);
+}
+
+/* 12. SHARED FOOTER */
+
+footer {
+    padding: 2rem;
+    background-color: var(--dark);
+    color: var(--white);
+    text-align: center;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+}
+
+/* 13. BUTTON HOVER EFFECTS */
+
+.rules-next-button:hover,
+.interior-next a:hover,
+.exterior-next-button:hover,
+.engine-next-button:hover {
+    background-color: var(--bright-red);
+    color: var(--white);
+}
+
+/* =========================================
+   14. TABLET AND MOBILE
+   Screens 768px and smaller
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+
+    /* Header */
+
+    .site-header {
+        flex-direction: column;
+        gap: 1rem;
+        min-height: 0;
+        padding: 1rem;
+    }
+
+    .brand {
+        gap: 1rem;
+    }
+
+    .logo-placeholder {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .brand-name {
+        font-size: 1.25rem;
+    }
+
+    .brand-name span {
+        font-size: 0.9rem;
+    }
+
+    .main-nav ul {
+        gap: 0.8rem;
+    }
+
+    .mobile-nav-label {
+        display: block;
+        margin: 0 0 0.4rem;
+        color: #CCCCCC;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .main-nav a {
+        font-size: 0.75rem;
+    }
+
+    /* Shared hero */
+
+    .unified-hero,
+    .contact-hero.unified-hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0.5rem;
+        height: auto;
+        min-height: 24rem;
+        padding: 1.5rem 1rem;
+        text-align: center;
+    }
+
+    .unified-hero::after,
+    .contact-hero.unified-hero::after {
+        top: 45%;
+        right: 0;
+        width: 100%;
+        height: 55%;
+        transform: none;
+        border-left: 0;
+    }
+
+    .unified-hero > article:first-child {
+        max-width: 100%;
+    }
+
+    .unified-hero > article:first-child h1 {
+        font-size: 1.6rem;
+    }
+
+    .unified-hero > article:first-child p {
+        max-width: 23rem;
+        margin: 0.5rem auto;
+    }
+
+    .unified-hero > figure {
+        width: 100%;
+        height: auto;
+        flex: 0 0 auto;
+    }
+
+    .unified-hero > figure img {
+        height: 12rem;
+    }
+
+    .contact-hero-right {
+        max-width: 100%;
+        align-self: center;
+        text-align: center;
+    }
+
+    .contact-hero-right h2 {
+        margin: 0.25rem 0;
+    }
+
+    /* Page titles */
+
+    .unified-title {
+        height: 5.5rem;
+        border-bottom-width: 0.7rem;
+    }
+
+    .unified-title h2 {
+        font-size: clamp(1.5rem, 8vw, 3.5rem);
+    }
+
+    /* Home */
+
+    .home-intro > h2 {
+        font-size: 8vw;
+        border-bottom-width: 0.7rem;
+    }
+
+    .home-intro > h3 {
+        margin: 1.5rem auto;
+    }
+
+    .specs {
+        width: 92%;
+    }
+
+    .spec-card {
+        grid-template-columns: 1fr;
+    }
+
+    .spec-card img {
+        height: 12rem;
+    }
+
+    .spec-text {
+        padding: 1.5rem;
+    }
+
+    .spec-text h3 {
+        font-size: 1.4rem;
+    }
+
+    .jdm-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .jdm-card.wide-card {
+        grid-column: auto;
+    }
+
+    /* Rules */
+
+    .rules-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Interior */
+
+    .interior-feature-grid,
+    .interior-detail-grid,
+    .interior-lighting-card {
+        grid-template-columns: 1fr;
+    }
+
+    .interior-feature-image {
+        min-height: 12rem;
+    }
+
+    .interior-feature-image img {
+        height: 12rem;
+    }
+
+    /* Exterior */
+
+    .exterior-upgrades,
+    .exterior-details {
+        grid-template-columns: 1fr;
+    }
+
+    /* Engine */
+
+    .engine-specs {
+        grid-template-columns: 1fr;
+    }
+
+    .engine-airflow {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .engine-tuning-card,
+    .engine-tuning-card.reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .engine-tuning-card.reverse figure {
+        order: 0;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-card,
+    .contact-info-card,
+    .contact-explore-card {
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 769px) {
+
+    .site-header {
+        flex-direction: row;
+    }
+
+    .mobile-nav-label {
+        display: none;
+    }
+}
+
+/* =========================================
+   15. SMALL MOBILE SCREENS
+   Around 375px
+   ========================================= */
+
+@media screen and (max-width: 480px) {
+
+    .main-nav ul {
+        gap: 0.6rem;
+    }
+
+    .main-nav a {
+        font-size: 0.7rem;
+    }
+
+    .unified-hero > article:first-child h1 {
+        font-size: 1.4rem;
+    }
+
+    .unified-hero {
+        padding: 1rem;
+    }
+
+    .home-intro > h2 {
+        font-size: 7.5vw;
+    }
+
+    .rules-content,
+    .interior-content,
+    .contact-content,
+    .exterior-section,
+    .engine-section {
+        width: 92%;
+    }
+
+    .jdm-card,
+    .rules-card,
+    .interior-detail-card,
+    .exterior-upgrade-card {
+        padding: 1.25rem;
+    }
+
+    .engine-airflow {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-salutation {
+        flex-direction: column;
+    }
+}
+
+
+
+/* =========================================
+   HOME HERO - CORRECTED PROPORTIONS
+   ========================================= */
+
+.hero.unified-hero .hero-text {
+    align-self: center;
+    padding-top: 0;
+    text-align: left;
+}
+
+.hero.unified-hero .hero-text h1 {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.05;
+    color: #FFFFFF;
+}
+
+.hero.unified-hero .hero-text .hero-small {
+    display: block;
+    margin-top: 0.15rem;
+    color: #FFFFFF;
+    font-size: 0.55em;
+    font-weight: 500;
+}
+
+.hero.unified-hero .hero-text .hero-highlight {
+    display: block;
+    margin-top: 0.1rem;
+    color: #FF0000;
+    font-size: 1.6em;
+    font-weight: 800;
+    line-height: 1;
+    text-shadow: 0 0 5px #AE3333;
+}
+
+.hero.unified-hero .hero-text p {
+    max-width: 15rem;
+    margin: 0.8rem 0 0;
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+.hero.unified-hero .hero-button {
+    display: inline-block;
+    max-width: 12rem;
+    margin-top: 0.9rem;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.65rem;
+    line-height: 1.2;
+    text-align: center;
+}
+
+/* Mobile */
+
+@media screen and (max-width: 768px) {
+
+    .hero.unified-hero .hero-text {
+        align-self: center;
+        text-align: center;
+    }
+
+    .hero.unified-hero .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero.unified-hero .hero-text p {
+        margin: 0.8rem auto 0;
+    }
+}
